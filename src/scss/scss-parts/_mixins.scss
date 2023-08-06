@@ -1,0 +1,106 @@
+@import 'variables';
+
+@mixin show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@mixin hide {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@mixin resetMg {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin container($maxWidth, $padding) {
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+@mixin focusPseudo($inset, $bg) {
+  content: '';
+  position: absolute;
+  inset: $inset;
+  z-index: -1;
+  background-color: $bg;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+@mixin modalOverlay {
+  position: fixed;
+  overflow-y: auto;
+  inset: 0;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(51, 51, 51, 0.3);
+}
+
+@mixin modalOpen {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1000;
+}
+
+@mixin textBreak {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+@mixin sol1200 {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin sol1024 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+
+@mixin sol920 {
+  @media (max-width: 920px) {
+    @content;
+  }
+}
+
+
+@mixin sol767 {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin sol600 {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin sol576 {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin sol500 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}

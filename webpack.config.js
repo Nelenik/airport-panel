@@ -60,6 +60,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		clean: true,
 		filename: `js/${filename('[name]', '.js')}`,
+		publicPath: '/',
 	},
 	plugins: [
 		...htmlFiles,

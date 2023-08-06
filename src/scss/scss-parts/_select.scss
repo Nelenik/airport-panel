@@ -1,0 +1,126 @@
+.select {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  font-family: 'OpenSans', sans-serif;
+  font-size: 1rem;
+  line-height: 24px;
+
+  &--active .select__btn {
+    &::before {
+      transform: translate(0, -50%) rotate(180deg);
+    }
+  }
+
+  &__btn {
+    box-sizing: inherit;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px 21px 12px 21px;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+    border-radius: 7px;
+    border: 1px solid #C0CAD6;
+    background-color: #ffffff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      // transform: translate(0, -50%) rotate(-45deg);
+      // width: 10px;
+      // height: 10px;
+      // border: 1px solid #000000;
+      // border-width: 0 0 1px 1px;
+      transition: transform 0.4s ease;
+      z-index: 2;
+      pointer-events: none;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: #182433 transparent transparent transparent;
+    }
+
+  }
+
+  &__dropdown {
+    overflow: auto;
+    max-height: 400px;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+    background-color: #ffffff;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -100;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: opacity 0.3s ease, visibility 0.3s ease, z-index 0.3s ease, transform 0.3s ease;
+    -ms-overflow-style: none;
+    /* IE и Edge */
+    scrollbar-width: none;
+
+    &--js-shown {
+      opacity: 1;
+      visibility: visible;
+      z-index: 100;
+      transform: scaleY(1);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__item {
+    box-sizing: inherit;
+    position: relative;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+
+    &:hover,
+    &:focus-within {
+      background-color:
+        #A0C3FF;
+    }
+  }
+
+  &__def-radio {
+    position: absolute;
+    transform: scale(0);
+    appearance: none;
+  }
+
+  &__item-text {}
+
+  &__autocomplete {
+    box-sizing: inherit;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 7px;
+    border: 1px solid #9CA3AF;
+    background-color: #ffffff;
+    outline: none;
+
+    // &:hover {
+    //   background-color: rgba(160, 195, 255, 0.2);
+    // }
+
+    // &:focus-visible,
+    // &:focus {
+    //   background-color: rgba(160, 195, 255, 0.4)
+    // }
+  }
+}

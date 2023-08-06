@@ -1,0 +1,69 @@
+@import 'mixins';
+@import 'variables';
+@import 'fonts';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+  /* height: auto; */
+}
+
+body {
+  /* min-width: 320px; */
+  font-family: 'WorkSans', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  @include textBreak;
+}
+
+[role="button"],
+.btn-reset {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link-reset {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.list-reset {
+  @include resetMg;
+  list-style: none;
+}
+
+.visually-hidden {
+  position: fixed;
+  z-index: -100;
+  opacity: 0;
+  left: -100vh;
+  transform: scale(0);
+}
+
+.stop-scroll {
+  overflow: hidden;
+  // height: 100%;
+  position: relative;
+}
+
